@@ -9,6 +9,8 @@ const todoRemoveButton = StyleSheet.create({
     fontWeight: sizes.bold
   },
   buttonContainer: {
+    borderTopWidth: 2,
+    borderColor: '#ccc',
     alignItems: 'center',
     justifyContent: 'center',
     height: sizes.standardContainer,

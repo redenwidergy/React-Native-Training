@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 import { sizes } from "../constants";
 
 const todoAddButton = StyleSheet.create({
@@ -14,8 +14,8 @@ const todoAddButton = StyleSheet.create({
     backgroundColor: '#f5fCff',
     paddingTop: 2,
     paddingBottom: 6,
-    paddingLeft: 6,
-    paddingRight: 6,
+    paddingLeft: Platform === 'ios' ? 6 : 10,
+    paddingRight: Platform === 'ios' ? 6 : 10,
     borderRadius: 100
   }
 });
