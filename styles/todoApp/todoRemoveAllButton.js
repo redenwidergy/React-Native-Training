@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 import { sizes } from "../constants";
 
-const todoRemoveButton = StyleSheet.create({
+const todoRemoveAllButton = StyleSheet.create({
   buttonContent: {
     color: '#f00',
     fontSize: sizes.commonText - 6,
@@ -17,4 +17,4 @@ const todoRemoveButton = StyleSheet.create({
   }
 });
 
-export { todoRemoveButton };
+export { todoRemoveAllButton };

@@ -9,7 +9,7 @@ const TodoAddButton = ({ handlePress }) => {
   const { buttonContent, buttonContainer } = todoAddButton;
   return (
     <CustomButton
-      underlayColor="#def"
+      underlayColor="#fafafa"
       styles={buttonContainer}
       onPress={handlePress}
     >

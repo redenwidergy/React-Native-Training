@@ -12,6 +12,7 @@ const todoAddButton = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#ccc',
     backgroundColor: '#f5fCff',
+    marginLeft: 20,
     paddingTop: 2,
     paddingBottom: 6,
     paddingLeft: Platform === 'ios' ? 6 : 10,

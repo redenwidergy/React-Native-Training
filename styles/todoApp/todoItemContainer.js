@@ -1,11 +1,13 @@
 import { StyleSheet } from "react-native";
 
 const todoItemContainer = StyleSheet.create({
-  todoItem: {
+  todoContainer: {
     borderColor: '#ddd',
     borderBottomWidth: 2,
-    paddingLeft: 30,
-    paddingRight: 20
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingTop: 10,
+    paddingBottom: 10
   }
 });
 

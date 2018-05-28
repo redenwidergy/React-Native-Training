@@ -1,20 +1,24 @@
 import React from "react";
 import { View } from "react-native";
+
 import {
   CustomInput
-} from "../common"
+} from "../common";
 
 import {
   TodoAddButton
-} from "./TodoAddButton"
+} from "./TodoAddButton";
 
-import { todoInputStyles, todoItemContainer } from "../../styles/todoApp"
+import {
+  todoInputStyles,
+  todoItemContainer
+} from "../../styles/todoApp";
 
 const TodoInputContainer = ({ handlePress, handleChangeText, value }) => {
   const { inputStyle, inputContainerStyle } = todoInputStyles;
-  const { todoItem } = todoItemContainer;
+  const { todoContainer } = todoItemContainer;
   return (
-    <View style={[todoItem, inputContainerStyle]}>
+    <View style={[todoContainer, inputContainerStyle]}>
       <CustomInput
         onChangeText={(text) => handleChangeText(text)}
         onSubmitEditing={handlePress}

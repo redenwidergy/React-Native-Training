@@ -3,10 +3,10 @@ import { Text } from "react-native";
 
 import { CustomButton } from "../common";
 
-import { todoRemoveButton } from "../../styles/todoApp";
+import { todoRemoveAllButton } from "../../styles/todoApp";
 
-const TodoRemoveButton = ({ handlePress }) => {
-  const { buttonContent, buttonContainer } = todoRemoveButton;
+const TodoRemoveAllButton = ({ handlePress }) => {
+  const { buttonContent, buttonContainer } = todoRemoveAllButton;
   return (
     <CustomButton
       underlayColor="#def"
@@ -18,4 +18,4 @@ const TodoRemoveButton = ({ handlePress }) => {
   );
 };
 
-export { TodoRemoveButton };
+export { TodoRemoveAllButton };

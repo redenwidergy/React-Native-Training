@@ -12,13 +12,17 @@ import {
 import {
   TodosContainer,
   TodoInputContainer,
-  TodoRemoveButton
+  TodoRemoveAllButton
 } from "./components/todoApp";
 
 import { containerStyles } from "./styles/common/containerStyles";
 
 export default class App extends Component {
-  state = { todos: ["Something"], value: "", selected: [] };
+  state = {
+    todos: ["Something", "Something Else"],
+    value: "",
+    selected: [false, true]
+  };
 
   getValueFromInput(text) {
     this.setState({
@@ -30,20 +34,23 @@ export default class App extends Component {
     if (this.state.value) {
       this.setState(prevState => ({
         todos: [...prevState.todos, prevState.value],
+        selected: [...prevState.selected, false],
         value: ""
       }));
     }
   }
 
-  removeTodos(todos) {
-    const newTodos = [...this.state.todos].filter(todo => todos.indexOf(todo) < 0);
+  removeSelectedTodos() {
+    const newTodos = [...this.state.todos].filter(
+      (todo, index) => this.state.selected[index]
+    );
     this.setState({
       todos: newTodos
     });
   }
 
   render() {
-    console.log(this.state.todos)
+    console.log(this.state);
     const { container } = containerStyles
     return (
       <View style={container}>
@@ -55,9 +62,11 @@ export default class App extends Component {
         />
         <TodosContainer
           todos={this.state.todos}
+          selected={this.state.selected}
         />
-        {/* Agregar vista con height: '100%' */}
-        <TodoRemoveButton />
+        <TodoRemoveAllButton
+          handlePress={() => this.removeSelectedTodos()}
+        />
       </View>
     );
   };

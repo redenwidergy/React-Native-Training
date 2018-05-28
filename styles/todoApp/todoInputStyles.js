@@ -12,6 +12,8 @@ const todoInputStyles = StyleSheet.create({
   inputContainerStyle: {
     flexDirection: 'row',
     alignItems: 'center',
+    paddingLeft: 20,
+    paddingRight: 20,
     width: '100%'
   }
 });

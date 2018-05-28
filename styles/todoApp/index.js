@@ -1,4 +1,5 @@
 export * from "./todoInputStyles";
+export * from "./todoItem";
 export * from "./todoItemContainer";
 export * from "./todoAddButton";
-export * from "./todoRemoveButton";
+export * from "./todoRemoveAllButton";
