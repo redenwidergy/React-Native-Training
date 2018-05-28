@@ -8,28 +8,36 @@ import {
   todoItemContainer
 } from "../../styles/todoApp"
 
-const TodoItem = ({ children, handlePress, handleDelete }) => {
-  const { todoText } = todoItem;
+const TodoItem = ({ children, handlePress, handleDelete, selected }) => {
+  const {
+    selectedButtonActive,
+    selectedButtonContainer,
+    todoControls,
+    todoRemoveButton,
+    todoText,
+    todoSelectedContainer
+  } = todoItem;
   const { todoContainer } = todoItemContainer;
   return (
-    <View style={[todoContainer]}>
+    <View style={selected ? [todoContainer, todoSelectedContainer] : todoContainer}>
       <Text style={todoText}>
         {children}
       </Text>
-      <CustomButton
-        underlayColor="#fafafa"
-        // styles={buttonContainer}
-        onPress={handlePress}
-      >
-        <Text style={todoText}>View</Text>
-      </CustomButton>
-      <CustomButton
-        underlayColor="#fafafa"
-        // styles={buttonContainer}
-        onPress={handleDelete}
-      >
-        <Text style={todoText}>X</Text>
-      </CustomButton>
+      <View style={todoControls}>
+        <CustomButton
+          underlayColor="#fafafa"
+          styles={selectedButtonContainer}
+          onPress={handlePress}
+        >
+          <View style={selected ? selectedButtonActive : ''} />
+        </CustomButton>
+        <CustomButton
+          underlayColor="#fafafa"
+          onPress={handleDelete}
+        >
+          <Text style={todoRemoveButton}>X</Text>
+        </CustomButton>
+      </View>
     </View>
   )
 }

@@ -3,17 +3,23 @@ import { FlatList, Text } from "react-native";
 
 import { TodoItem } from "./TodoItem"
 
-const TodosContainer = ({ selected, todos }) => {
+const TodosContainer = ({ handleSelect, handleRemove, selected, todos }) => {
 
   return (
     <FlatList
       data={todos.map((todo, index) => ({
         key: todo,
-        selected: selected[index]
+        selected: selected[index],
+        handlePress: () => handleSelect(index),
+        handleDelete: () => handleRemove(todo)
       }))}
       renderItem={({item}) => (
-        <TodoItem>
-          {`${item.key}  ${String(item.selected).toUpperCase()}`}
+        <TodoItem
+          handlePress={item.handlePress}
+          handleDelete={item.handleDelete}
+          selected={item.selected}
+        >
+          {item.key}
         </TodoItem>
       )}
     />

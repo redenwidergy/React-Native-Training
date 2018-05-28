@@ -5,9 +5,12 @@ const todoItemContainer = StyleSheet.create({
     borderColor: '#ddd',
     borderBottomWidth: 2,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    alignItems: "center",
+    justifyContent: 'space-between',
     paddingTop: 10,
-    paddingBottom: 10
+    paddingBottom: 10,
+    paddingLeft: 20,
+    paddingRight: 20
   }
 });
 

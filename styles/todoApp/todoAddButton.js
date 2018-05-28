@@ -13,10 +13,10 @@ const todoAddButton = StyleSheet.create({
     borderColor: '#ccc',
     backgroundColor: '#f5fCff',
     marginLeft: 20,
-    paddingTop: 2,
-    paddingBottom: 6,
-    paddingLeft: Platform === 'ios' ? 6 : 10,
-    paddingRight: Platform === 'ios' ? 6 : 10,
+    paddingTop: Platform.OS === 'ios' ? 4 : 2,
+    paddingBottom: Platform.OS === 'ios' ? 8 : 6,
+    paddingLeft: Platform.OS === 'ios' ? 8 : 10,
+    paddingRight: Platform.OS === 'ios' ? 8 : 10,
     borderRadius: 100
   }
 });
